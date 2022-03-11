@@ -13,9 +13,12 @@ class MessageView {
   }
 
   displayMessage() {
+    const inputEl = document.querySelector('#message-input');
+
+
  const messageEl = document.createElement('div');
  messageEl.setAttribute('id','message');
- messageEl.innerText = 'This is a message displayed by JavaScript';
+messageEl.innerText = inputEl.value
  this.mainContainerEl.append(messageEl);
 };
 

@@ -10,11 +10,15 @@ describe('MessageView', () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
 
     const view = new MessageView();
-
+    const inputEl = document.querySelector('#message-input');
+  
+    
+    inputEl.value = "Some text in there";
     const buttonEl = document.querySelector('#show-message-button');
     buttonEl.click();
 
-    expect(document.querySelector('#message')).not.toBeNull();
+
+    expect(document.querySelector('#message').innerText).toEqual("Some text in there");
   });
 
   it('hides the button', () => {
